@@ -1,0 +1,129 @@
+:root {
+    color-scheme: dark light;
+    --primary-bg: rgb(243 244 246 / 1);
+    --secondary-bg: white;
+    --accent-1: rgb(249 250 251 / 1);
+
+    --font-primary: rgb(17 24 39 / 1);
+    --font-secondary: rgb(107 114 128 / 1);
+
+    --border-primary: rgb(229 231 235 / 1);
+
+    --font-lg: 1.12rem;
+    --font-md: 0.87rem;
+
+    --debug: 1px solid rgb(0, 0, 0, 20%);
+}
+
+* {
+    box-sizing: content-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: ui-sans-serif,system-ui,-apple-system;
+}
+
+.card-body,
+.file-list {
+    list-style: none;
+    padding-left: 0;
+    margin:0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-bg);
+    font-size: var(--font-md);
+    color: var(--font-primary);
+}
+
+.card-header,
+.card-body {
+    width: min(98vw, 900px);
+    background-color: var(--secondary-bg);
+}
+
+.card-header {
+    padding-block: 20px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.card-header h1 {
+    font-size: var(--font-lg);
+    font-weight: 500;
+}
+
+.card-header h1,
+.card-header p,
+.element {
+    padding-inline: 1.25rem;
+    margin: 0;
+}
+
+.card-header p {
+    margin-top: 4px;
+}
+
+.element {
+    padding-block: 1.40rem;
+}
+
+.card-header p,
+.element p:first-child {
+    color: var(--font-secondary);
+}
+
+.card-body .element {
+    display: flex;
+}
+
+.card-body {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.element :first-child,
+.element :last-child  {
+    flex-basis: 50%;
+    margin: 0;
+}
+
+.element:nth-child(odd) {
+    background-color: var(--accent-1);
+}
+
+.file-item {
+    border: 1px solid var(--border-primary);
+    display: flex;
+}
+
+.file-name {
+    flex: 1;
+    margin: 0;
+}
+/* 
+.icon svg {
+    width: 1.24rem;
+    height: 1.24rem;
+} */
+
+@media (max-width: 35rem) {
+    .card-body .element {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .element :last-child {
+        margin-top: 4px;
+    }
+}
